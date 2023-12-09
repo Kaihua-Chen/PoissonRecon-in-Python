@@ -11,12 +11,12 @@ position $p$ being $\chi(p)$. Solving this function is the core step of
 Poisson surface reconstruction.
 
 We currently know that the vector field of the normals to the sample
-point clouds on the actual surface, denoted as $\Vec{V}$, which is
+point clouds on the actual surface, denoted as $\vec{V}$, which is
 perpendicular to the surface with unit length. Since $\chi$ also
 conforms to these properties according to its definition, in the limited
 continuous space $\Omega$ containing all the sample points
 $p \in \Omega$, we aim for the gradient of the scalar function $\chi$ to
-be as close as possible to $\Vec{V}$, i.e.:
+be as close as possible to $\vec{V}$, i.e.:
 $$\min_\chi{\int_{\Omega}|\nabla \chi-\vec{V}|^2 dp}$$
 
 Applying the Euler-Lagrange Equation to
@@ -133,6 +133,3 @@ from $\mathbf{x}$ and applying *mcubes.marching_cubes($\mathbf{x}$, 0)*.
 
 [2] Lorensen, W. E., & Cline, H. E. (1998). Marching cubes: A high resolution 3D surface construction algorithm. In Seminal graphics: pioneering efforts that shaped the field (pp. 347-353).
 
-[3] https://github.com/alecjacobson/geometry-processing-mesh-reconstruction
-
-[4] https://github.com/xucao-42/poisson_surface_reconstruction/tree/main
