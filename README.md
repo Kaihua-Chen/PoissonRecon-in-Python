@@ -102,7 +102,7 @@ effectiveness and robustness of RAR can be tested using "horse_with_normals.xyz"
 ### Python Implementation
 
 We use *Python* to implement the classical surface reconstruction
-algorithm entirely from scratch. Our implementation relies on essential
+algorithm from scratch. Our implementation relies on essential
 libraries such as *numpy* and *open3d*. Open3d serves as a tool for
 reading and visualizing the 3D point cloud data.
 
