@@ -1,6 +1,6 @@
 # PoissonRecon-in-Python
 
-## Poisson Problem
+### Poisson Problem
 
 The surface separates the object itself and its surrounding environment.
 Thus, we can define an implicit function such that its values inside and
@@ -30,7 +30,7 @@ $$\nabla \cdot \nabla \chi \equiv \Delta \chi = \nabla \vec{V}$$ where
 $\nabla$ represents the gradient operator and $\Delta$ represents the
 Laplacian operator. $\Delta \chi$ signifies its divergence.
 
-## Space Discretization
+### Space Discretization
 
 Computer-implemented surface reconstruction is executed in discrete
 space. Hence, $\Omega$ can be conceptualized as a cuboid area. This
@@ -43,7 +43,7 @@ $\mathbf{x}$, with an isovalue of $\mathbf{x}(q_i)$ for any $q_i$ with
 $i \in \mathbb{Z} \cap [1, n^3]$.
 
 <div align="center">
-  <img src="https://github.com/Kaihua-Chen/PoissonRecon-in-Python/figures/figure1.png">
+  <img src="https://github.com/Kaihua-Chen/PoissonRecon-in-Python/tree/main/figures/figure1.png">
 </div>
 
 The gradient of $\mathbf{x}$ necessitates discrete gradient calculation.
@@ -77,7 +77,7 @@ $\mathbf{x}$ and normalizing it, the marching cubes
 algorithm is directly employed for surface
 reconstruction.
 
-## Random Adaptive Resampling
+### Random Adaptive Resampling
 
 While highly non-uniform point clouds are relatively uncommon, they can
 significantly impact the quality of surface reconstruction. To address
@@ -99,7 +99,7 @@ $i \in \mathbb{Z} \cap [1, (n-2)^3]$. For all subgrids with $k_i>0$, we
 randomly resample them until their counts equal $\max_{i}{k_i}$. The
 effectiveness and robustness of RAR can be tested using "horse_with_normals.xyz" example
 
-## Python Implementation
+### Python Implementation
 
 We use *Python* to implement the classical surface reconstruction
 algorithm entirely from scratch. Our implementation relies on essential
@@ -126,3 +126,13 @@ the dimension of the global weight $\mathbf{w}$ is $(N, n^3)$. We then
 compute $\sigma = \frac{1}{N} \mathbf{1}^T \mathbf{w} \cdot \mathbf{x}$.
 Finally, the surface reconstruction is completed by subtracting $\sigma$
 from $\mathbf{x}$ and applying *mcubes.marching_cubes($\mathbf{x}$, 0)*.
+
+
+### References
+[1] Kazhdan, M., Bolitho, M., & Hoppe, H. (2006, June). Poisson surface reconstruction. In Proceedings of the fourth Eurographics symposium on Geometry processing (Vol. 7, p. 0).
+
+[2] Lorensen, W. E., & Cline, H. E. (1998). Marching cubes: A high resolution 3D surface construction algorithm. In Seminal graphics: pioneering efforts that shaped the field (pp. 347-353).
+
+[3] https://github.com/alecjacobson/geometry-processing-mesh-reconstruction
+
+[4] https://github.com/xucao-42/poisson_surface_reconstruction/tree/main
